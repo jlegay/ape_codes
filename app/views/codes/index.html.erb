@@ -20,7 +20,7 @@
             <td><a href="#" data-toggle="modal" data-target="#modal-<%= code.id %>" class="btn btn-primary">Voir plus</a></td>
           </tr>
           <div class="modal fade" id="modal-<%= code.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">
@@ -33,14 +33,12 @@
                 </div>
                 <div class="modal-body">
                   <h5>Cette classe comprend: </h5>
-                  <small> <%= simple_format(code.included) %> </small>
-                  <h5>Cette classe ne comprend pas: </h5>
-                  <small> <%= code.not_included %> </small>
+                  <small> <%= sanitize(code.included) %> </small>
+                  <%  if code.not_included.length > 0 %>
+                    <h5>Cette classe ne comprend pas: </h5>
+                    <small> <%= sanitize(code.not_included) %> </small>
+                  <% end %>
                 </div>
-<!--                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div> -->
               </div>
             </div>
           </div>

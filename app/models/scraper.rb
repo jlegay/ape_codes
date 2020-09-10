@@ -43,8 +43,8 @@ class Scraper
       insee_html = open(insee_url)
       insee_doc = Nokogiri::HTML(insee_html)
       code_name = insee_doc.css('.titre-principal').text.split(" : ")[1]
-      code_included = insee_doc.css('.comprend').css('.list1').text
-      code_not_included = insee_doc.css('.comprend-pas').css('.list1').text
+      code_included = insee_doc.css('.comprend').css('.list1')
+      code_not_included = insee_doc.css('.comprend-pas').css('.list1')
       new_code = {code_digits: code, name: code_name, included: code_included, not_included: code_not_included}
       codes_infos_array << new_code
     end
