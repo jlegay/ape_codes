@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Code.destroy_all
+
+scrape = Scraper.new
+codes = scrape.scrape_codes_urls
+Code.create_from_collection(codes)
+
+p Code.all
