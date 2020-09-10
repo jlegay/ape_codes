@@ -37,7 +37,7 @@ class Scraper
 
     codes_infos_array = []
 
-    codes_list_formatted.first(20).each do |code|
+    codes_list_formatted.each do |code|
       insee_url = "https://www.insee.fr/fr/metadonnees/nafr2/sousClasse/#{code}?champRecherche=false"
       # p insee_url
       insee_html = open(insee_url)

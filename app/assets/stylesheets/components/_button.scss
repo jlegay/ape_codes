@@ -1,0 +1,11 @@
+.btn-blue {
+  color: white;
+  background-color: $light-blue;
+  opacity: 0.7;
+  border-radius: 5px;
+
+  &:hover {
+    color: white;
+    opacity: 1;
+  }
+}
