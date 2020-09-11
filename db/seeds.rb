@@ -12,4 +12,3 @@ scrape = Scraper.new
 codes = scrape.scrape_codes_urls
 Code.create_from_collection(codes)
 
-p Code.all
